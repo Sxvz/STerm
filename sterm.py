@@ -43,7 +43,7 @@ class STermApp(App):
 			if self.handleCommand(text):
 				if self.ser.is_open:
 					self.screen.text += '<< ' + text + '\n'
-					self.ser.write(text.encode('utf-16be'))
+					self.ser.write(text.encode('latin-1'))
 				else:
 					self.screen.text += 'not connected --- use \'connect <port> [baudrate]\' to connect\n'
 			self.input.text = ''
